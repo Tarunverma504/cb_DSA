@@ -58,7 +58,7 @@ public class Arrange_Odd_Even_linked_list__CB {
 			}
 			dummy.next=temp;
 		    }
-		}
+		}       
                 Node t=head;
 		System.out.print("Original List:");
 		while(t!=null){
