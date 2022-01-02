@@ -138,7 +138,7 @@ public class construct_graph {
         for(int i=1;i<=v;i++){
             if(!vis.contains(i)){
                 System.out.print("CC "+count+" -> ");
-               // dfs(i,vis);
+                //dfs(i,vis);
                 BfsConn(i, vis);
                 count++;
                 System.out.println();
