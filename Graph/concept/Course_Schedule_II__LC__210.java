@@ -1,4 +1,4 @@
-package Graph;
+package Graph.concept;
 
 /*
  * To change this license header, choose License Headers in Project Properties.

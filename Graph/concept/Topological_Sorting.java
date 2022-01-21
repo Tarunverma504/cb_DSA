@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Graph;
+package Graph.concept;
 
 /**
  *
@@ -11,7 +11,7 @@ package Graph;
  */
 
 import java.util.*;
-public class cycleDetection {
+public class Topological_Sorting {
     public static class graph{
         // vertex vs list of neighbours
         int v;
@@ -60,7 +60,7 @@ public class cycleDetection {
             return indegree;
         }
         
-        private boolean cycleDetection(){
+        private void topologicalSorting(){
             int[] indegree=indegree();
             Queue<Integer> bfs = new LinkedList<>();
             for(int i=0;i<v;i++){
@@ -69,25 +69,18 @@ public class cycleDetection {
                 }
             }
             
-            int count=0;
-            
             while(!bfs.isEmpty()){
                 int front = bfs.poll();
                 System.out.print(front+" ");
                 List<Integer> neighbours = adjList.getOrDefault(front, new ArrayList<>());
-                count++;
+                
                 for(int neighbour:neighbours){
                     indegree[neighbour]--;
                     if(indegree[neighbour]==0){
                         bfs.add(neighbour);
                     }
                 }
-                
             }
-                    
-            System.out.println();
-            System.out.println(count+" count");
-            return count!=v;
         }
     }
     
@@ -104,6 +97,6 @@ public class cycleDetection {
 	g.addEdge(4, 6, false);
 	g.addEdge(6, 7, false);
 	g.addEdge(7, 4, false);
-        System.out.println(g.cycleDetection());
+        g.topologicalSorting();
     }
 }
