@@ -60,7 +60,7 @@ static class Solution {
           this.left = left;
           this.right = right;
       }
-  }
+    }
     public int kthSmallest(TreeNode root, int k) {
         List<Integer> inorder = new ArrayList<>();
         sol(root,inorder);
